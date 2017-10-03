@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="346792a3-5426-48e3-b167-fce2f4ea5f0c" name="html_php" url="http://localhost:8088">
+        <fileTransfer port="0" mountedRoot="D:\phpStudy\WWW" accessType="MOUNT" />
+      </webServer>
+      <webServer id="d19b4b0a-724f-4e6b-9a6c-009593355823" name="remote_server" url="http://202.121.178.223/">
+        <fileTransfer host="202.121.178.223" port="22" rootFolder="/var/www/html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

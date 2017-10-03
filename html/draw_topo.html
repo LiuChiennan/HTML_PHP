@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>vis.js</title>
+
+<!--    <script type="text/javascript" src="js/jtopo-0.4.8-min.js"></script>-->
+
+    <script type="text/javascript" src="http://visjs.org/dist/vis.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <link href="http://visjs.org/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css" rel="stylesheet">
+        html,body{
+            height: 100%;
+        }
+        table{
+            font-size: 30px;
+            height: 20%;
+        }
+        #mynetwork{
+            width: 100%;
+            height: 80%;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>CPU Totals:</td>
+         <td>3</td>
+    </tr>
+    <tr>
+        <td>Hosts up:</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Hosts down:</td>
+        <td> 0</td>
+    </tr>
+</table>
+
+<div id="mynetwork"></div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 创建节点数组
+        var nodes = new vis.DataSet([
+            {id: 1, image:'icons/node.jpg',label:'master:192.168.0.6',shape:'image'},
+            {id: 2, image:'icons/node.jpg',label:'slave1:192.168.0.7',shape:'image'},
+            {id: 3, image:'icons/node.jpg',label:'slave2:192.168.0.8',shape:'image'},
+            {id: 5, image:'icons/luyou.jpg',label:'202.121.178.223',shape:'image'}
+        ]);
+
+        // 创建关系数组
+        var edges = new vis.DataSet([
+            {from: 1, to: 3,length:200},
+            {from: 1, to: 2,length:200},
+            {from: 5, to: 1,length:200}
+        ]);
+
+        // 创建一个网络
+        var container = document.getElementById('mynetwork');
+
+        // vis数据
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        var options = {
+            autoResize:true,
+            width:'100%',
+            height:'100%',
+            edges:{
+                font:{
+
+                }
+            }
+        };
+
+        // 初始化网络
+        var network = new vis.Network(container, data, options);
+    })
+</script>
+
+
+</body>
+</html>

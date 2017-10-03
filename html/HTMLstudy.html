@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta标签主要是记录一些文档的源信息
+	     name属性主要用于描述网页，可以为keywords、description、generator、author、等，后面都要跟content
+		 http-equiv用于传送http通信的标头，可以为content-type（文档格式）、refresh（刷新）——可以定时跳转
+	 -->
+	<meta charset="utf-8">
+	<meta name="keywords" content="testhtml"/>
+	<title>html学习笔记</title>
+
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+	<header><h1>这是我的html学习笔记</h1></header>
+
+	<nav id="menu">
+		<menu>
+		    <h3>目录</h3>
+		    <li> <a href="#HTML基础">HTML基础</a> </li>
+		    <li> <a href="#超链接">建立超链接</a> </li>
+		    <li> <a href="http://www.baidu.com" target="_parent">百度</a> </li>
+		    <li> <a href="mailto:976953517@qq.com">我的邮箱</a></li>
+			<li> <a href="#使用图像">使用图像</a></li>
+			<li> <a href="#使用列表">使用列表</a> </li>
+			<li> <a href="#使用表格">使用表格</a></li>
+			<li> <a href="#使用表单">使用表单</a></li>
+			<li> <a href="#使用多媒体">使用多媒体</a></li>
+			<li> <a href="#使用网页">使用网页</a></li>
+			<li> <a href="#HTML5">HTML5</a></li>
+			<li> <a href="#使用css">使用css</a></li>
+	
+	  </menu>
+	</nav>
+
+	<article id="context">
+		<section>
+		<a id="HTML基础"></a>
+		<h3> HTML基础 </h3>
+		<h4>1、元信息标记&lt;meta&gt;</h4>
+		&nbsp; meta提供的信息不显示在页面中，一般用来定义页面信息的说明、关键字、刷新等<br>
+		&nbsp;1.1&nbsp;设置页面关键字<br>
+		&nbsp;&nbsp;在搜索引擎中，检索信息都是通过关键字来实现的，当搜索引擎用关键字搜索网站时，如果网页中包含关键字，就可以被搜索到<br>
+		&nbsp;&nbsp;语法：&lt;meta&nbsp;name="keywords"&nbsp;content="输入具体的关键字"/&gt;<br>
+		&nbsp;1.2&nbsp;设置页面说明<br>
+		&nbsp;&nbsp;设置页面说明也是为了搜索引擎的查找，它用来详细说明网页的内容，在网页中不显示出来<br>
+		&nbsp;&nbsp;语法：&lt;meta&nbsp;name="descripition"&nbsp;content="设置页面说明"/&gt;<br>
+		&nbsp;1.3&nbsp;定义编辑工具<br>
+		&nbsp;&nbsp;现在有很多编辑软件都可以编辑软件，在源代码的头部可以设置网页编辑工具的名称<br>
+		&nbsp;&nbsp;语法：&lt;meta&nbsp;name="generator"&nbsp;content="编辑软件的名称"/&gt;<br>
+		&nbsp;1.4&nbsp;设置网页文字及语言<br>
+		&nbsp;&nbsp;在网页中还可以设置语言的编码方式，这样浏览器就可以正确的选择语言，而不需要人工选取<br>
+		&nbsp;&nbsp;语法：&lt;meta&nbsp;http-equiv="content-type"&nbsp;content="text/html;&nbsp;charset="字符集类型"/&gt;<br>
+		&nbsp;1.5&nbsp;设置网页的定时跳转<br>
+		&nbsp;&nbsp;使用&lt;meta/&gt;可以使网页在一定时间后自动刷新，这课通过将http-equiv设置为refresh来实现<br>
+		&nbsp;&nbsp;语法：&lt;meta&nbsp;http-equiv="refresh"&nbsp;content="跳转的时间;&nbsp;URL=跳转到的地址/&gt;默认情况下，跳转时间以秒为单位<br>
+		<h4>2、标题字</h4>
+		&nbsp;html中包含各种级别的标题，各种级别的标题由&lt;h1&gt;到&lt;h6&gt;元素来定义，其中，&lt;h1&gt;代表最高级别的标题，&lt;h6&gt;最低<br>
+		&nbsp;语法：&lt;h?&gt;标题内容&lt;/h&gt;<br>
+		<h4>3、标题字对齐属性align</h4> 
+		&nbsp;默认情况下，标题文字是左对齐的，但可以自己定义对齐方式<br>
+		&nbsp;语法:&lt;align="left/right/center"&gt;一般用于&lt;h_&gt;和任意文本标签中<br>
+		<h4>4、段落标记&lt;p&gt;比较简单</h4> 
+		<h4>5、换行标记&lt;br&gt;</h4>
+		不换行标记&amp;nobr;一般用于让超过屏幕的宽度的一段话不自动换行，由于在以后的html版本中不允许使用没有结束符的标记，因此换行最好使用&lt;br/&gt;
+		<h4>6、对于各种文本，有许多有用的标记，表示一些特殊的文字表示</h4>
+		<ul>
+			<li>&lt;b&gt;：定义粗体文字</li>
+			<li>&lt;big&gt;：定义大号字</li>
+			<li>&lt;em&gt;：定义着重文字</li>
+			<li>&lt;i&gt;：斜体字</li>
+			<li>&lt;small&gt;：定义小号字</li>
+			<li>&lt;strong&gt;：定义加重字</li>
+			<li>&lt;sub&gt;：定义下标字</li>
+			<li>&lt;sup&gt;：定义上标字</li>
+			<li>&lt;ins&gt;：定义插入字</li>
+			<li>&lt;del&gt;：定义删除字</li>
+		</ul>
+		还有一些计算机输出的标签：
+		<ul>
+			<li>&lt;code&gt;：计算机输出代码、编程代码示例，不保留多余的空格和折行</li>
+			<li>&lt;kbd&gt;：定义键盘码、键盘输入</li>
+			<li>&lt;samp&gt;：定义计算机样本代码、计算机输出示例</li>
+			<li>&lt;tt&gt;：定义打字机代码</li>
+			<li>&lt;var&gt;：定义变量、数学变量</li>
+			<li>&lt;pre&gt;：定义预格式文本</li>
+			<li>&lt;&gt;：</li>
+		</ul>
+		引用和术语定义
+		<ul>
+			<li>&lt;abbr&gt;：定义缩写，这个元素定义缩写或首字母缩略语</li>
+			<li>&lt;acronym&gt;：定义首字母缩写</li>
+			<li>&lt;address&gt;：定义地址文档或文章的联系信息（作者/拥有者），此元素通常以斜体显示。大多数浏览器会在此元素前后添加折行</li>
+			<li>&lt;bdo&gt;：定义文字方向</li>
+			<li>&lt;blockquote&gt;：定义长引用，浏览器通常会对这个元素进行缩进处理。</li>
+			<li>&lt;q&gt;：定义短引用语，浏览器通常会为 这个元素包围引号。</li>
+			<li>&lt;cite&gt;：定义引用、引证、著作的标题</li>
+			<li>&lt;dfn&gt;：定义一个项目或缩写的定义。</li>
+		</ul>
+		一些常用标记
+		<ul>
+			<li>link：资源引用如css文件</li>
+			<li>style：定义样式</li>
+			<li>div：文档中的节或区域</li>
+			<li>span：文档中的行内或小块区域</li>
+		</ul>
+		<h4>7、其它标记：</h4>
+		&nbsp;插入空格：&amp;amp<br>
+		&nbsp;特殊符号：<br>
+		&nbsp;&nbsp;&quot;:&amp;quot<br>
+		&nbsp;&nbsp;&amp;:&amp;amp<br>
+		&nbsp;&nbsp;&lt;:&amp;lt<br>
+		&nbsp;&nbsp;&gt;:&amp;gt<br>
+		&nbsp;&nbsp;&times;:&amp;times<br>
+		&nbsp;&nbsp;&sect;:&amp;sect<br>
+		&nbsp;&nbsp;&copy;:&amp;copy<br>
+		&nbsp;&nbsp;&reg;:&amp;reg<br>
+		&nbsp;&nbsp;&trade;:&amp;trade<br>
+		<h5>具体的html符号可以参考这里：<a href="http://www.w3school.com.cn/tags/html_ref_entities.html" target="_blank">请点击这里</a></h5>
+		<br>
+
+	
+	</section>
+
+	<hr/>
+
+	<section>
+		<a id="超链接"></a>
+		<h3>超链接</h3>
+		<h4>1、超链接的基本知识</h4>
+		&nbsp;超链接其实就是一个url（统一资源定位符），分为绝对路径和相对路径，链接的可以是网页，也可以是内部的资源<br>
+		<h4>2、当链接为一个网页使，默认是在当前的窗口打开，可以使用target属性来控制目标窗口</h4>
+		&nbsp;语法：&lt;a&nbsp;href="链接目标"&nbsp;target="目标窗口的打开方式"&gt;<br>
+		&nbsp;&nbsp;target属性取值有下面四种<br>
+		&nbsp;&nbsp;_self:在当前页面打开链接<br>
+		&nbsp;&nbsp;_blank:在全新窗口打开链接<br>
+		&nbsp;&nbsp;_top:在顶层框架打开链接<br>
+		&nbsp;&nbsp;_parent:在当前框架上一层打开链接<br>
+		<h4>3、锚点链接</h4>
+		&nbsp;3.1&nbsp;首先应当建立锚点<br>
+		&nbsp;语法：&lt;a&nbsp;name="锚点名称"&gt;&lt;/a&gt;，利用锚点的名称可以链接到相应的位置，锚点名称不能重复，最新html中可以用id取代name<br>
+		&nbsp;3.2&nbsp;链接锚点的语法：&lt;&nbsp;href="#锚点的名称"&gt;...&lt;/a&gt;<br>
+		&nbsp;3.3&nbsp;链接到其它页面的锚点：&lt;&nbsp;href="url#锚点的名称"&gt;...&lt;/a&gt;<br>
+		<h4>4、外部链接</h4>
+		&nbsp;外部链接指本网站之外的链接，一般是依据各种网络通信协议如http、https、ftp等<br>
+		&nbsp;4.1&nbsp;链接到外部网站，如：&lt;a&nbsp;href="http://www.baidu.com"&gt;&lt/a&gt;<br>
+		&nbsp;4.2&nbsp;链接到email，如：&lt;a&nbsp;href="mailto:976953517@qq.com"&gt;...&lt;/a&gt;<br>
+		&nbsp;4.3&nbsp;链接到ftp，同上<br>
+		&nbsp;4.4&nbsp;链接到Telent，常用于登陆一些bbs网站，语法：&lt;a&nbsp;href="telent://地址"&gt;...&lt;/a&gt;<br>
+		&nbsp;4.5&nbsp;下载文件，语法：&lt;a&nbsp;href="文件地址"&gt;...&lt;/a&gt;,地址可以为相对地址也可以为绝对地址，如果是zip、rar等文件，单击链接就会下载<br>
+
+	</section>
+	<hr/>
+
+	<section>
+		<a id ="使用图像"></a>
+		<h3>图像的使用</h3>
+		<h4>1、图像的格式</h4>
+		&nbsp;网页中图像公有三种格式，分别是GIF,JPEG,PNG.目前GIF和JPEG的支持是最好的。<br>
+		<h4>2、插入图像标记</h4>
+		&nbsp;在页面中擦汗如图像可以起到美化页面的作用，标记为img<br>
+		&nbsp;img标记的各个属性<br>
+		&nbsp;&nbsp;src:&nbsp;图像源文件<br>
+		&nbsp;&nbsp;alt:&nbsp;提示文字<br>
+		&nbsp;&nbsp;border:&nbsp;边框<br>
+		&nbsp;&nbsp;width,height:&nbsp;宽和高<br>
+		&nbsp;&nbsp;vspace:&nbsp;垂直间距<br>
+		&nbsp;&nbsp;hspace:&nbsp;水平间距<br>
+		&nbsp;&nbsp;align:&nbsp;排列<br>
+		&nbsp;&nbsp;dynsrc:&nbsp;设定avi文件的播放<br>
+		&nbsp;&nbsp;loop:&nbsp;设定avi文件循环播放次数<br>
+		&nbsp;&nbsp;loopdelay:&nbsp;设定avi文件循环播放延迟<br>
+		&nbsp;&nbsp;start:&nbsp;设定avi文件播放方式<br>
+		&nbsp;&nbsp;lowsrc:&nbsp;设置低分辨率图片<br>
+		&nbsp;&nbsp;usemap:&nbsp;印象地图<br>
+		<h4>3、src:图像源文件</h4>
+		&nbsp;语法：&lt;img&nbsp;src="图像文件地址"/&gt;，文件地址也可以是url地址<br>
+		<h4>4、alt：图像的提示文字</h4>
+		&nbsp;提示文字有两个作用，当图像下载完毕之后，指针放到图像上便会出现提示语；下载不成功，图像位置就会显示提示文字<br>
+		&nbsp;语法：&lt;img&nbsp;src="图像文件地址"&nbsp;alt="提示语"&gt;<br>
+		&nbsp;其它的属性都好理解
+		<h4>5、图像的超链接，即点击图像进行跳转，只要将img放在&lt;a&gt;当中就好</h4>
+		&nbsp;语法：&lt;a&nbsp;href="..."&gt;&lt;img&nbsp;src="..."/&gt;&lt;/a&gt;<br>
+
+	</section>
+
+	<hr/>
+
+	<section>
+
+		<a id="使用列表"></a>
+		<h3>列表的使用</h3>
+		HTML列表（list）共有3终类型：无序列表、有序列表、定义列表<br>
+		<h4>1、有序列表（ordered list）</h4>
+		有序列表在列表中将每个元素按数字或字幕顺序标号。创建有序列表时，以打开和关闭&lt;ol&gt;为开始，然后在每个列表元素前用&lt;li&gt;标识，结束标记为&lt;/li&gt;<br>
+		&nbsp;语法：<br>
+		&nbsp;&nbsp;&lt;ol&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;有序列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;有序列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;有序列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;有序列表项&lt;/li&gt;<br>
+		……<br>
+
+		&nbsp;&nbsp;&lt;/ol&gt;<br>
+		有序列表一般是用于纵向有序排列文字<br>
+		有序列表的属性：<br>
+		&nbsp;&nbsp;type：设置序号的类型，包括大小写、阿拉伯数字、罗马数字,有五种类型<br>
+		&nbsp;&nbsp;&nbsp;l:&nbsp;数字1，2，3，4<br>
+		&nbsp;&nbsp;&nbsp;a:&nbsp;小写英文字母a,b,c,d,...<br>
+		&nbsp;&nbsp;&nbsp;A:&nbsp;大写英文字母A,B,C,D,...<br>
+		&nbsp;&nbsp;&nbsp;i:&nbsp;小写罗马数字<br>
+		&nbsp;&nbsp;start:调整编号的起始值，这样会直接影响没一项前面的标号<br>
+
+		<h4>2、无序列表（unordered list）</h4>
+		无序列表以打开&lt;ul&gt;和关闭&lt;/ul&gt;为标志，列表项同有序列表<br>
+		语法：<br>
+		&nbsp;&nbsp;&lt;ul&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&nbsp;……<br>
+		&nbsp;&nbsp;&lt;/ul&gt;<br>
+		&nbsp;无序列表的属性<br>
+		&nbsp;type属性：默认情况下，无序列表的项目符号是黑色圆点，通过type可以调整项目符号，避免列表符号的单调<br>
+		&nbsp;&nbsp;disc:默认，实心圆<br>
+		&nbsp;&nbsp;circle:空心圆<br>
+		&nbsp;&nbsp;square：正方形符号<br>
+
+		<h4>3、dl(definition list)：定义列表标记，&lt;dt&gt;(definition term)用来指定需要解释的名词；&lt;dd&gt;(definition description)为具体的描述</h4><br>
+		&nbsp;语法如下：<br>
+		&nbsp;&lt;dl&gt;定义条件1&gt;<br>
+		&nbsp;&lt;dl&gt;定义条件2&gt;<br>
+		&nbsp;&lt;dl&gt;定义条件3&gt;<br>
+		<h4>4、菜单列表标记menu，比较简单，直接看语法</h4>
+		&nbsp;&lt;menu&gt;<br>
+		&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&lt;li&gt;列表项&lt;/li&gt;<br>
+		&nbsp;&lt;/menu&gt;<br>
+		
+
+	</section>
+
+	<hr/>
+
+	<section>
+		<a id="使用表格"></a>
+		<h3>表格的使用</h3>
+		&nbsp;表格可以用于网页布局当中，因为表格的各种属性可以很好的控制位置，不过现在更多用div+css的方法来布局<br>
+		<h4> 1、创建表格</h4>
+		&nbsp;&nbsp;&nbsp;1.1、表格的基本组成<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表格由三个标记来创建，table、tr、td，tr用来创建一行，td用来创建一列<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个单元格的内容可以是文字或其它东西，如img、a、等<br>
+		&nbsp;&nbsp;&nbsp;1.2、设置表格的标题caption<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以利用&lt;caption&gt;来设置标题单元格，表格的标题一般位于整个表格的第一行<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语法如下：<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;表格标题&lt;/caption&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;……&lt;/td&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;……<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;……<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
+		&nbsp;&nbsp;&nbsp;1.3、标头th<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表头一般位于表格的第一行和第一列，主要是用于说名一列/一行是什么,跟&lt;td&gt;有点像<br>
+		<h4> 2、表格的基本属性</h4>
+		&nbsp;表格的属性有好多，但都是跟在table后面的，位于&lt;table&gt;里面，常见属性有：<br>
+		&nbsp;width、height：单位为像素<br>
+		&nbsp;align：表格对齐方式：left、center、right<br>
+		&nbsp;border：边框宽度<br>
+		&nbsp;bordercolor：边框颜色<br>
+		&nbsp;cellspacing：内框宽度<br>
+		&nbsp;cellpadding：表格内文字与边框宽度，默认情况下，是紧挨着左边的边框，显得比较紧<br>
+		&nbsp;bgcolor：背景颜色<br>
+		&nbsp;background：背景图像，后面跟的是图像地址<br>
+		<h4> 3、表格的行属性</h4>
+		&nbsp;与表格属性类似，表格行属性是设置整行的属性，放在&lt;tr&gt;里面主要有：<br>
+		&nbsp;bgcolor、background、height、bordercolor、align（水平对齐方式）、<br>
+		&nbsp;valign：垂直对齐方式<br>
+		<h4> 4、单元格属性</h4>
+		&nbsp;单元格属性是放在&lt;td&gt;里面的<br>
+		&nbsp;width、height、align、valign、bgcolor、bordercolor、background<br>
+		&nbsp;colspan：水平跨度，单位为整数，指跨度有几行，主要是为了单元格的合并<br>
+		&nbsp;rowspan：垂直跨度，单位为整数，指跨度有几行，主要是为了单元格的合并<br>
+		&nbsp;bordercolordark：单元格的暗边框，内容为十六进制颜色<br>
+		&nbsp;bordercolorlight：单元格的亮边框，同上<br>
+		<h4> 5、表格结构</h4>
+		&nbsp;表格的标记有两个：&lt;thead&gt;和&lt;tbody&gt;分别是表首和表的主题，使用这些能对表格的一行和多行单元格属性统一修改<br>
+		&nbsp;&lt;thead&gt;<br>
+		&nbsp;&nbsp;&nbsp;表首标记主要位于最上端表首的样式，可以设置背景颜色、文字对齐方式等属性，如：<br>
+		&nbsp;&nbsp;&nbsp;&lt;thead&nbsp;bgcolor="背景颜色"&nbsp;align="对齐方式"&gt;<br>
+		&nbsp;&nbsp;&nbsp;……<br>
+		&nbsp;&nbsp;&nbsp;&lt;/thead&gt;<br>
+		&nbsp;&lt;tbody&gt;<br>
+		&nbsp;&nbsp;&nbsp;与表首类似，表主题样式用于设计表主体的样式。<br>
+		&nbsp;&lt;tfoor&gt;：表尾样式<br>
+		&nbsp;&nbsp;&nbsp;语法都类似，主要是用于最后一行的<br>
+	</section>
+
+	<hr/>
+
+	<section>
+		<a id="使用表单"></a>
+		<h3>使用表单</h3>
+		表单的用途很多，如会员注册、网上搜索和用户登陆等都会用到<br>
+		表单的基本属性有：
+		<ol>
+			<li>
+				action：表单的处理程序，表单的要提交的地址，就是一个URL；
+			</li>
+			<li>
+				method：传送方法，有get、post等；id：好理解
+			</li>
+			<li>
+				enctype：表单的信息提交的编码方式，有两种取值：application/x-www-form-urlencoded（默认编码方式）和multipart/form-data（MIME）编码，<mark bgcolor="FF0000">当上传文件时必须使用这种方式</mark>
+			</li>
+			<li>
+				target：用来指定目标窗口的打开方式，表单的目标窗口用来显示表单的返回信息，还是只有四个方式：_blank,_parent,_top,_top；
+			</li>
+			<li>
+				accept_charset：规定在被提交表单中使用的字符集（默认：页面字符集）。
+			</li>
+			<li>autocomplete：规定浏览器应该自动完成表单（默认：开启）。</li>
+			<li>novalidate：规定浏览器不验证表单。</li>
+			<li>
+				表单中由许多元素组成：如文本输入框text、密码域password、单选按钮radio、复选框checkbox、按钮button、提交按钮submit、重置按钮reset、图像域image、隐藏域hidden、文件域file，这些属性都是input标记里面的type属性的内容，下面来一一说明：
+				<ul type="square">
+
+			        <li>文字段text：输入文字，语法：&lt;input&nbsp;name="控件名字"&nbsp;type="text"&nbsp;value="文字字段的默认值"&nbsp;size="控件长度"&nbsp;maxlength="最长字符数"&gt;</li>
+
+			        <li>密码域password：密码域可以算是一种特殊的文字段，但是密码域输入的内容会以*呈现，语法：&lt;input&nbsp;name="控件名字"&nbsp;type="text"&nbsp;value="文字字段的默认值"&nbsp;size="控件长度"&nbsp;maxlength="最长字符数"&gt;</li>
+
+			        <li>单选按钮radio：小而圆的按钮，一般是以多个单选按钮的形式出现，语法：&lt;input&nbsp;name="单选按钮名称"&nbsp;type="radio"&nbsp;value="单选按钮的取值"&nbsp;checked="checked"&gt;单选按钮之间往往还有文字，<br>
+				    一点说明：在单选按钮中必须设置value的值，对一个选择列表来说，<mark>所有的单选按钮要设置为相同的name，且一个单选按钮组中只有一个能被设置成checked，</mark>这样的话初始只有一个能被打勾</li>
+
+				    <li>复选框checkbox：从一个选项列表中选择多个选项，语法很简单：&lt;input&nbsp;name="复选框名称"&nbsp;type="checkbox"&nbsp;value="复选框的取值"&nbsp;checked="checked"&gt;，一个复选框组中可以有多个被设置成checked</li>
+
+				    <li>按钮button，比较简单，语法：&lt;input&nbsp;type="button"&nbsp;name="名称"&nbsp;value="按钮的取值/显示在按钮上"&nbsp;onclick="处理程序"&gt;</li>
+
+				    <li>提交按钮submit：提交按钮实现表单内容的提交，也即是点开这个按钮就开始调用action方法，语法：&lt;input&nbsp;type="submit"&nbsp;name="..."&nbsp;value="..."&gt;</li>
+
+				    <li>重置按钮reset：和submit一样，type="reset"</li>
+
+				    <li>图像域image：可以得到外观的按钮，语法：&lt;input&nbsp;name="图像域名称"&nbsp;type="image"&nbsp;src="图像路径"&gt;</li>
+
+				    <li>隐藏域hidden：有时候需要传送一些数据，而这些数据对用户来说是不可见的，隐藏域可以包含要提交的数据，但是并不显示在浏览器上，语法：&lt;input&nbsp;type="hidden"&nbsp;name="..."&nbsp;value="隐藏域的取值"&gt;</li>
+
+				    <li>文件域file：主要用来提交文件的，用法也很简单：&lt;input&nbsp;type="file"&nbsp;size="控件的长度"&nbsp;maxlength="最长字符数"&gt;</li>
+
+				    <li>h5新增的url类型，简化了功能，语法为：&lt;input&nbsp;name="myurl"&nbsp;type="url"&nbsp;value="http://www.baidu.com"/&gt;一个例子：<br>
+				    	<form target="_blank" method="get" action="http://www.baidu.com">
+				    		<input type="url" name="urls" value="http://www.baidu.com">
+				    		<input type="submit" name="submit">
+				    	</form>
+				    </li>
+
+				    <li>h5新增，email类型，表单提交时会自动验证是否是邮箱，语法：&lt;input&nbsp;name="email<&nbsp;type="email"&nbsp;value="http://976953517.com"/&gt;，一个例子：<br>
+				    	<form>
+				    		<input type="email" name="email" value="976953517@qq.com">
+				    		<input type="submit" name="submit">
+				    	</form>
+				    </li>
+
+				    <li>h5新增，date类型，时间日期，以日历的形式方便用户输入，语法：&lt;input&nbsp;type="date"&nbsp;name="date"/&gt;
+				    	一个例子：<br>
+				    	<form>
+				    		<input type="date" name="date">
+				    		<input type="submit" name="submit">
+				    	</form>
+
+				    </li>
+
+				    <li>h5新增，time类型，自己输入时间，语法：&lt;input&nbsp;type="time"&nbsp;name="tme"/&gt;一个例子：<br>
+				    	<form>
+				    		<input type="time" name="time">
+				    		<input type="submit" name="submit">
+				    	</form>
+
+				    </li>
+
+				    <li>h5新增，datetime类型，跟time类似</li>
+				    <li>更多属性参见：<a href="http://www.w3school.com.cn/html/html_form_attributes.asp" target="_blank">http://www.w3school.com.cn/html/html_form_attributes.asp</a></li>
+		        </ul>
+			</li>
+			<li>
+				菜单和列表，用以选择指定内容中一个
+				<ul type="disc">
+					<li>
+					下拉菜单select，用法：<br>
+					&lt;select&nbsp;name="菜单名称"&gt;
+				    &lt;option&nbsp;value="上海"&nbsp;selected="selected"&gt;上海&lt;/selected&gt;<br>
+				    &lt;option&nbsp;value="北京"&nbsp;&gt;北京&lt;/selected&gt;<br>
+				    &lt;option&nbsp;value="重庆"&nbsp;&gt;重庆&lt;/selected&gt;<br>
+				    ……
+				    &lt;/select&gt;
+				    </li>
+				    <li>
+				    	列表项，用法：<br>
+				    	&lt;select&nbsp;name="列表项名称"&nbsp;size="显示的列表项数"&nbsp;multiple="multiple"&gt;<br>
+				    	&lt;option&nbsp;value="选项值"&nbsp;selected="selected"&gt;选项显示内容&lt;/option&gt;<br>
+				    	……<br>
+				    	&lt;/select&gt;
+				    </li>
+				</ul>
+			</li>
+
+			<li>
+				当需要让浏览者输入多行文本时，就应该使用文本域textarea而不是input里的text，文本域有自己的标记textarea，语法如下：<br>
+				&lt;textarea&nbsp;name="文本域名称"&nbsp;cols="列数"&nbsp;rows="行数"&gt;&lt;/textarea&gt;
+			</li>
+		</ol>
+
+	</section>
+
+	<hr/>
+
+	<section>
+		<a name="使用多媒体"></a>
+		<h3>使用多媒体</h3>
+		网页的多媒体元素一般包括动态文字、动态图像、声音以及动画等<br>
+		<ol>
+			<li>
+				滚动标记marquee<br>
+				说明：只要将需要滚动的东西放到&lt;marquee&gt;&lt;/marque&gt;之间就可以了，如：<br>
+				<marquee direction="left" width="300" height="40" bahavior="alternate" scrollamount=3>
+					<p color="#641653">hahahahahahah</p>
+				</marquee> <br>
+				marque有好几个属性：<br>
+				<ul type="square">
+					<li>滚动方向direction：默认是从右往左，但可以自己设置:left,right,up,down</li>
+					<li>滚动方式behavior：scroll（默认，循环滚动）、slide（只滚动一次）、alternate（来回交替滚动）</li>
+					<li>滚动速度scrollamount：滚动速度</li>
+					<li>滚动循环：loop，循环的次数</li>
+					<li>滚动范围：width和height</li>
+					<li>背景颜色bgcolor</li>
+					<li>空白空间hspace、vspace：分别是水平范围和垂直范围，单位像素</li>
+				</ul>
+			</li>
+			<li>
+				关于多媒体的插入，可以使用h5的新标记，不在这里叙述。
+			</li>
+		</ol>
+	</section>
+
+	<hr/>
+
+	<section>
+		<a name="使用网页"></a>
+		<h3>使用网页</h3>
+		在html中，可以导入其它的html页面，用以对页面分区，主要是使用iframe这个标签，虽然有许多其它的框架，但是那是老版本，最好不用<br/>
+		<h4>添加iframe的语法</h4>
+		<pre>&nbsp;&nbsp;&lt;iframe src="url"&gt;&lt;/iframe&gt;，url指向的是隔离页面的位置</pre>
+		<h4>iframe的一些属性设置</h4>
+		<ul>
+			<li>align：用样式表代替</li>
+			<li>frameborder：是否显示框架周围的边框，值为0、1</li>
+			<li>height、width：有两种值，pixel或者百分比</li>
+			<li>marginheight、marginwidth：顶部和底部的边距、左右的边距</li>
+			<li>name</li>
+			<li>scrolling：是否显示滚动条，值为yes、no、auto</li>
+			<li>seamless：规定iframe看上去像html的一部分，值为seamless</li>
+			<li>src：文档路径</li>
+			<li>srcdoc：html文档内容</li>
+			<li>longdesc：该iframe中html的较长描述</li>
+		</ul>
+	</section>
+
+	<hr/>
+
+	<section>
+		<a name="HTML5"></a>
+		<h3>HTML5</h3>
+		在html5中，为了使文档的结构更加清晰，增加了很多的新增结构元素。
+		<ol>
+			<li><h4>新增的主题结构元素</h4>
+				<ol>
+					<li>article元素<br>
+						article元素可以包含独立的内容项，可以包含一个论坛帖子、一片杂志文章、一篇文章博客、用户评论等，里面可以利用header和footer元素，因此当需要布局一篇文章时，最好用article元素
+
+					</li>
+
+					<li>section元素，section元素用于对网站或app中的内容进行分块，article和section可以相互嵌套的使用，且article可以看作一种特殊的section，它比section更强调独立性，而section更强调分块，因此，如果一块内容相对来说比较独立的时候，就用article，需要分成几块的，就用section</li>
+
+					<li>nav元素，nav元素就是将一列超链接放到一起，说明这是一个导航组，语法比较简单：<br>
+						&lt;nav&nbsp;&gt;<br>
+						&lt;ul&gt;<br>
+						&lt;li&gt;&lt;a href="..."&gt;...&lt;/a&gt;&lt;/li&gt;<br>
+						&lt;li&gt;&lt;a href="..."&gt;...&lt;/a&gt;&lt;/li&gt;<br>
+						&lt;li&gt;&lt;a href="..."&gt;...&lt;/a&gt;&lt;/li&gt;<br>
+						&lt;/ul&gt;<br>
+						&lt;nav&nbsp;&gt;<br>
+						nav元素主要使用在：<br>
+						顶部传统导航条：现在主流网站上都有不同层级的导航条，其作用是将当前页面跳转到其它网页；<br>
+						左侧导航栏<br>
+						页内导航：业内导航的作用是在页面内部进行跳转<br>
+					</li>
+
+					<li>aside元素，aside元素用来表示当前页面或文章的附属信息部分，它可以包含与当前页面或主要内容相关的引用、侧边栏、广告、导航条，以及其它有关于主页面的内容的东西</li>
+
+					<li>bdi：定义与其他文本不同的文本方向。</li>
+					<li>details：定义用户可查看或隐藏的额外细节。</li>
+					<li>dialog：定义对话框或窗口。</li>
+					<li>figure：定义自包含内容，比如图示、图表、照片、代码清单等等。</li>
+					<li>figcaption：定义 &lt;figure&gt; 元素的标题。</li>
+					<li>main：定义文档的主内容。</li>
+					<li>menuitem：定义用户能够从弹出菜单调用的命令/菜单项目。</li>
+					<li>meter：定义已知范围（尺度）内的标量测量。</li>
+					<li>progress：定义任务进度。</li>
+					<li>rp：定义在不支持 ruby 注释的浏览器中显示什么。</li>
+					<li>rt：定义关于字符的解释/发音（用于东亚字体）。</li>
+					<li>更多在：<a href="http://www.w3school.com.cn/html/html5_new_elements.asp" target="_blank">http://www.w3school.com.cn/html/html5_new_elements.asp</a></li>
+				</ol>
+			</li>
+
+			<li><h4>新增的非主体结构元素</h4>
+				<ol>
+					<li>hgroup元素，header元素位于article的正文开头，hgroup可以作为副标题的表示，比较简单，可有可无</li>
+
+					<li>footer元素，footer元素通常用于标识某块的注脚，如作者、版权等信息，简单~~</li>
+
+					<li>address元素，address元素通常位于文档的末尾，用来在文档中曾现联系信息，如标识文档作者等，简单~~</li>
+				</ol>
+			</li>
+
+			<li><h4>HTML5视频video,</h4>
+				video元素的出现让浏览器播放视频不再依赖插件，它的属性有：<br>
+				<ul>
+					<li>src和poster：src属性规定了video视频的来源（url），而poster属性则规定了视频加载时显示的图像，或者用户点击播放按钮前显示的图像。</li>
+					<li>perload属性：用于定义视频是否预加载，有三个可选的值：none、metadata、auto，如果video使用了autoplay属性，则该属性被忽略，它们的含义如下：<br>
+						<ul>
+							<li>none：页面加载后不加载视频</li>
+							<li>metadata：当页面加载后只载入元数据</li>
+							<li>auto：页面加载后载入整个视频</li>
+						</ul>
+					</li>
+					<li>autoplay：是否自动播放，需要自动播放是将autoplay置为"autoplay"就行</li>
+					<li>loop：是否循环播放，内容为"loop"</li>
+					<li>controls：向用户显示播放视频需要的控件，如播放、暂停、进度控制条等，内容为"controls"</li>
+					<li>width和height：没什么好说的</li>
+					<p>video元素可以可以拥有多个视频源，支持三种视频格式：OGG，MP4，WEBM，各种source源的写法如下：<br>
+						&lt;vidoe&gt;<br>
+						&lt;source&nbsp;src=".."&nbsp;type="video/mp4"&gt;<br>
+						&lt;source&nbsp;src=".."&nbsp;type="video/ogg"&gt;<br>
+						&lt;/video&gt;<br>
+						source出了src和type属性之外，还有个media属性，用以说明在何种媒介中使用<br>
+					</p>
+				</ul>
+
+			</li>
+
+			<li><h4>HTML5中的audio</h4>
+				audio与video很类似，都可以用css来渲染，如果audio属性中没有包含controls属性，则audio的播放控件无法呈现，此时音频只能通过用body中的onload方法来实现，示例代码如下：<br>
+				<article id="audio示例">
+					<code>
+						&lt;!DOCTYPE html&gt;<br/>
+						&lt;html&gt;<br/>
+						&lt;head&gt;<br/>
+						    &lt;title&gt;audio&lt;/title&gt;<br/>
+						    &lt;script type="text/javascript"&gt;<br/>
+								function playmusic(){<br/>
+									document.getElementById("audio示例").play();<br/>
+								}<br/>
+							&lt;/script&gt;<br/>
+						&lt;/head&gt;<br/>
+						&lt;body onload="playmusic()"&gt;<br/>
+							&lt;audio src="1.mp4" id="audio示例"&gt;&lt;/audio&gt;<br/>
+						&lt;/body&gt;<br/>
+						&lt;/html&gt;<br/>
+					</code>
+
+				
+				</article>
+				audio元素有很多的事件，如鼠标单击（onclick）、鼠标移动（onmouse move）、获得焦点（onfocus），还有一些是audio元素特有的事件，如播放（onplay）、暂停（onpause）、音量改变（onvolumechange）、播放完毕等（onended
+				）。
+			</li>
+
+			<li><h4>HTML5中的画布canvas</h4>
+				<p>
+					canvas元素只能使用javascript在上面绘制图像，至少要设置height、width属性<br/>
+				    canvas元素支持css样式表进行设置样式，有两套尺寸，元素本身大小和绘图表面的大小，一个示例代码如下：<br/>
+				    <code>
+				    	&lt;!DOCTYPE html&gt;<br/>
+				    	&lt;html&gt;<br/>
+				    	&lt;head&gt;<br/>
+				    		&lt;title&gt;canvas&lt;/title&gt;<br/>
+				    	&lt;/head&gt;<br/>
+				    	&lt;body&gt;<br/>
+				    		&lt;canvas width="100px" height="100px" id="canvas"&gt;&lt;/canvas&gt;<br/>
+				    		&lt;script type="text/javascript"&gt;<br/>
+				    			var canv=getElementById("canvas");<br/>
+				    			var cx=canv.getContext('2d');<br/>
+				    			cx.fillstyle="#eeeeee";<br/>
+				    			cx.fillrectangle(0,0,30,30);<br/>
+				    		&lt;/script&gt;<br/>
+				    	
+				    	&lt;/body&gt;<br/>
+				    	&lt;/html&gt;<br/>
+				    </code>
+				    关于h5的更多api，可以参考这里：<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">http://www.w3school.com.cn/tags/html_ref_canvas.asp</a>
+				</p>
+			</li>
+
+			<li><h4>HTML5中的内联SVG（可伸缩矢量图形）</h4>
+				SVG的教程，有时间再慢慢看，先放这里。。。：<a href="http://www.w3school.com.cn/svg/index.asp">http://www.w3school.com.cn/svg/index.asp</a>
+			</li>
+		</ol>
+	</section>
+
+	<hr/>
+
+	<section>
+		<a name="使用css"></a>
+		<h3>css的使用</h3>
+		<p>
+			css（层叠样式表）是一种网页制作技术，大多数浏览器支持<br/>
+			<ol>
+				<li>基本语法由三部分构成：选择符、样式属性、值，基本语法为：<br/>
+					选择符{样式属性1：取值1；样式属性2：取值2；……}<br/>
+				</li>
+
+				<li>添加css的方法
+					<ul>
+						<li>链接外部样式，就是调用css文件：<pre>&lt;link rel="stylesheet" type="text/css" href="1.css"&gt;</pre>
+						</li>
+
+						<li>内部样式表，就是直接写在head里面的，一个例子：<br/>
+							<code>
+								&lt;style type="text/css"&gt;<br/>body{<br/>background:#000000;<br/>}<br/>&lt;/style&gt;
+							</code>
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</p>
+	</section>
+
+	<!-- <address>
+		刘建南<br/>2017年秋
+	</address> -->
+
+
+	</article>
+	<footer><h4>刘建南   2017秋</h4></footer>
+
+
+	
+	
+
+</body>
+</html>

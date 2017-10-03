@@ -1,0 +1,29 @@
+header{
+			background-color: black;
+			text-align: center;
+			color: white;
+			padding: 5px;
+	}
+   #menu{
+			background: #eeeeee;
+			width: 20%;
+			height: 600px;
+			float: left;
+		}
+		#context{
+			background: #ffffff;
+			width: 80%;
+			float: left;
+		}
+		footer{
+			background-color: black;
+			text-align: center;
+			color: white;
+			padding: 3px;
+			float: left;
+			width: 100%;
+		}
+		nav#menu menu li{
+			height:30px;
+			border: 1px;
+		}
